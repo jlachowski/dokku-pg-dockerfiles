@@ -1,7 +1,7 @@
-# forked from https://gist.github.com/jpetazzo/5494158
+# forked from https://github.com/Kloadut/dokku-pg-dockerfiles
 
 FROM	ubuntu:quantal
-MAINTAINER	kload "kload@kload.fr"
+MAINTAINER	jlachowski "jalachowski@gmail.com"
 
 # prevent apt from starting postgres right after the installation
 RUN	echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d; chmod +x /usr/sbin/policy-rc.d
