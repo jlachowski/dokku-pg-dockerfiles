@@ -6,8 +6,12 @@ MAINTAINER	jlachowski "jalachowski@gmail.com"
 # prevent apt from starting postgres right after the installation
 RUN	echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d; chmod +x /usr/sbin/policy-rc.d
 
+RUN locale-gen --no-purge pl_PL.UTF-8
+ENV LC_ALL pl_PL.UTF-8
+RUN dpkg-reconfigure locales
+
 RUN apt-get update
-RUN	LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y -q postgresql-9.3 postgresql-contrib-9.3
+RUN	DEBIAN_FRONTEND=noninteractive apt-get install -y -q postgresql-9.3 postgresql-contrib-9.3
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get clean
 
