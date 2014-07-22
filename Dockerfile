@@ -1,6 +1,6 @@
 # forked from https://github.com/Kloadut/dokku-pg-dockerfiles
 
-FROM	ubuntu:quantal
+FROM	ubuntu:12.04
 MAINTAINER	jlachowski "jalachowski@gmail.com"
 
 # prevent apt from starting postgres right after the installation
