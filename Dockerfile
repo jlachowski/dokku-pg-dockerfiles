@@ -8,6 +8,7 @@ RUN	echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d; chmod +x /usr/sbin/polic
 
 RUN locale-gen --no-purge pl_PL.UTF-8
 ENV LC_ALL pl_PL.UTF-8
+ENV LC_COLLATE pl_PL.UTF-8
 RUN dpkg-reconfigure locales
 
 RUN apt-get update
